@@ -30,7 +30,7 @@ class HTMLEmailBuilder:
     def config_html(self):
         """
         set up the html part.
-        :param html:
+        :param html: add the <html></html> part.
         :return:
         """
         self.htmlemail.html = "<html>" + \
@@ -42,7 +42,7 @@ class HTMLEmailBuilder:
     def config_header(self, header):
         """
         set up the header part.
-        :param header:
+        :param header: add the <header></header> part.
         :return:
         """
         self.htmlemail.header = "<header>" + header + "</header>"
@@ -50,7 +50,7 @@ class HTMLEmailBuilder:
     def config_body(self, body):
         """
         set up the body part.
-        :param body:
+        :param body: add the <body></body> part.
         :return:
         """
         self.htmlemail.body = "<body>" + body + "</body>"
@@ -58,7 +58,7 @@ class HTMLEmailBuilder:
     def config_foot(self, foot):
         """
         set up the foot part.
-        :param foot:
+        :param foot: add the <footer></footer> part.
         :return:
         """
         self.htmlemail.foot = "<footer>" + foot + "</footer>"
