@@ -1,10 +1,6 @@
-"""
-    Improve the HTMLEmail, HTMLEmailBuilder, and GenerateHTMLEmail class.
-    Another approach to provide clean architecture.
-"""
 
 
-class Builder:
+class HTMLEmailBuilder:
     """ The builder of HTML Email class. """
 
     def __init__(self):
@@ -41,7 +37,7 @@ class Builder:
         return self
 
 
-class GenerateObject:
+class GenerateHTMLEmail:
     """ Generate HTMLEmail's class. """
 
     def __init__(self, builder):
@@ -52,6 +48,10 @@ class GenerateObject:
         self.foot = builder.foot
 
     def create_html_email(self):
+        """
+        create a html email page: test.html.
+        :return:
+        """
         try:
             f = open(self.file_path, 'w+')
             f.write(self.html)
@@ -60,16 +60,20 @@ class GenerateObject:
             print(f'[Error] create_html_email, {e}')
 
 
-def rewrite_main():
+def main():
     # TODO: user have to type the path of your file.
-    path = "D:\\github_project\\side_project_with_py\\html-email\\test2.html"
+    path = "D:\\github_project\\side_project_with_py\\html-email\\test.html"
 
-    builder = Builder()\
+    builder = HTMLEmailBuilder()\
         .config_file_path(path)\
         .config_header(input('Please type header content:\n'))\
         .config_body(input('Please type the content what you want to show in this page.\n'))\
         .config_foot(input('Please type the content of foot.\n'))\
         .config_html()
 
-    g = GenerateObject(builder)
+    g = GenerateHTMLEmail(builder)
     g.create_html_email()
+
+
+if __name__ == '__main__':
+    main()
