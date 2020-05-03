@@ -1,4 +1,6 @@
+# TODO: the responsibility of each class should be clear.
 from HTMLEmail import HTMLEmail, HTMLEmailBuilder
+from builder import rewrite_main
 
 
 class GenerateHTMLEmail:
@@ -7,7 +9,6 @@ class GenerateHTMLEmail:
     def __init__(self, file_path):
         self.builder = None
         self.file_path = file_path
-        self.all = None # all content.
 
     def setup(self):
         """
@@ -46,6 +47,11 @@ def main():
     g.setup()
     g.create_html_email()
 
+    # TODO: improve the builder.
+    # TODO: send email to clients.
+
 
 if __name__ == '__main__':
-    main()
+    """ pick up one what users want. """
+    # main()
+    rewrite_main()
