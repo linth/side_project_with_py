@@ -46,6 +46,9 @@ def main():
     g.setup()
     g.create_html_email()
 
+    # TODO: improve the builder.
+    # TODO: send email to clients.
+
 
 if __name__ == '__main__':
     main()
